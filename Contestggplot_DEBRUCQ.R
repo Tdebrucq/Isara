@@ -1,4 +1,4 @@
-# Graph test data star wars
+# Graph test data star wars DEBRUCQ Théophile 06/02/2024
 
 #installation des packages
 
@@ -32,6 +32,10 @@ hc
 pds <- starwars$mass
 pds
 
+#variable taille
+ht<- starwars$height
+ht
+
 #graphique histograme avec variable numérique poids
 
 par(mfrow=c(3,3))
@@ -46,11 +50,11 @@ boxplot(starwars$mass~starwars$hair_color)
 #Utilisation de ggplot2 comparaison poids et couleur cheveux
 
 ggplot(d) +
-  aes(x = hc) +
-  geom_histogram() +
-  ggtitle("couleur de cheveux selon le poids") +
-  xlab("couleur cheveux") +
-  ylab("poids")
+  aes(x = ht, y = pds) +
+  geom_point() +
+  xlab("taille") +
+  ylab("poids") +
+  coord_flip()
 
 ##test extension ggalt comparaison couleur cheveux et poids
 
